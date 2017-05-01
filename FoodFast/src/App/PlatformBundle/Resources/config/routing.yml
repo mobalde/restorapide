@@ -1,3 +1,11 @@
 app_platform_homepage:
     path:     /
     defaults: { _controller: AppPlatformBundle:Default:index }
+    
+app_platform_connexion:
+    path:     /connexion
+    defaults: { _controller: AppPlatformBundle:Connexion:connexion } 
+    
+app_platform_inscription:
+    path:     /inscription
+    defaults: { _controller: AppPlatformBundle:Inscription:inscription }
