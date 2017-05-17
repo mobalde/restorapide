@@ -1,13 +1,18 @@
 {# src/App/PlatformBundle/Resources/views/layout.html.twig #}
 
-<!DOCTYPE HTML>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{% block title %}OC Plateforme{% endblock %}</title>
-  </head>
-  <body>
-    {% block body %}
-    {% endblock %}
-  </body>
-</html>
+{% extends "::layout.html.twig" %}
+
+{% block title %} Annonces - {{ parent() }}{% endblock %}
+
+{# css specifique aux layouts du bundle #}
+{% block app_platform_css %}{% endblock %}
+
+{% block body %}
+    
+  {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+  {% block app_platform_body %}{% endblock %}
+  
+  {# js specifique aux layouts du bundle #}
+  {% block app_platform_javascripts %}{% endblock %}
+
+{% endblock %}
