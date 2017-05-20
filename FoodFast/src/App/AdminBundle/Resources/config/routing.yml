@@ -1,0 +1,7 @@
+app_admin_homepage:
+    path:     /
+    defaults: { _controller: AppAdminBundle:Default:index }
+
+app_admin_gestionproduit:
+    path:     /gestion_produit
+    defaults: { _controller: AppAdminBundle:Gestion:produit }

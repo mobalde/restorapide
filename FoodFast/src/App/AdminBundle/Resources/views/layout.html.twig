@@ -1,0 +1,19 @@
+{# src/App/AdminBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}FoodFast{% endblock %}
+
+{# css specifique aux layouts du bundle #}
+{% block app_admin_css %}{% endblock %}
+
+{% block body %}
+    
+  {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+  {% block app_admin_body %}{% endblock %}
+  
+  {# js specifique aux layouts du bundle #}
+  {% block app_admin_javascripts %}{% endblock %}
+
+{% endblock %}
+

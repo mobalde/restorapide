@@ -3,7 +3,7 @@ app_platform_homepage:
     defaults: { _controller: AppPlatformBundle:Default:index }
     
 app_platform_connexion:
-    path:     /connexion
+    path:     /login
     defaults: { _controller: AppPlatformBundle:Connexion:connexion } 
     
 app_platform_inscription:

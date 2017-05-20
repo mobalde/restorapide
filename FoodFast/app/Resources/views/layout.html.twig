@@ -3,8 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
       <title>{% block title %}{% endblock %}</title>
       {% block stylesheets %}
           {# On charge le CSS de bootstrap depuis le site directement #}
@@ -12,20 +11,19 @@
       {% endblock %}
     </head>
     <body>
-
       <div class="container">
         <div class="row">
-          <div class="col-md-9 col-lg-9 col-xs-9">
+          <div class="col-lg-offset-1 col-md-offset-1 col-md-10 col-lg-10 col-xs-10">
             {% block headers %}{% endblock %}
           </div>
         </div>
         <div class="row">
-          <div id="content" class="col-md-9 col-lg-9 col-xs-9">
+          <div id="content" class="col-lg-offset-1 col-md-offset-1 col-md-10 col-lg-10 col-xs-10">
             {% block body %}{% endblock %}
           </div>
         </div>
         <div class="row">
-          <div class="col-md-9 col-lg-9 col-xs-9">
+          <div class="col-lg-offset-1 col-md-offset-1 col-md-10 col-lg-10 col-xs-10">
             {% block footers %}{% endblock %}
           </div>
         </div>

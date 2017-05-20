@@ -59,14 +59,14 @@ class user
     /**
      * @var string
      *
-     * @ORM\Column(name="code_postal", type="integer")
+     * @ORM\Column(name="code_postal", type="string", length=5)
      */
     private $codePostal;
     
     /**
      * @var string
      *
-     * @ORM\Column(name="telephone", type="integer")
+     * @ORM\Column(name="telephone", type="string", length=10)
      */
     private $telephone;
     
