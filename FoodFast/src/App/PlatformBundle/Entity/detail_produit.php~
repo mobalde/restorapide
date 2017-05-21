@@ -27,6 +27,20 @@ class detail_produit
      * @ORM\Column(name="ingrdiens", type="string", length=10000)
      */
     private $ingrdiens;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="taille", type="string", length=10)
+     */
+    private $taille;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="prix", type="float")
+     */
+    private $prix;
 
 
     /**
@@ -63,4 +77,3 @@ class detail_produit
         return $this->ingrdiens;
     }
 }
-
