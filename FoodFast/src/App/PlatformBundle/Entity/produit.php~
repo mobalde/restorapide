@@ -28,6 +28,17 @@ class produit
      */
     private $nomProduit;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="type_produit")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $typeProduit;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="detail_produit")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $detailProduit;
 
     /**
      * Get id
@@ -63,4 +74,3 @@ class produit
         return $this->nomProduit;
     }
 }
-

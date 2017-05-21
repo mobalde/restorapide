@@ -28,6 +28,17 @@ class produit
      */
     private $nomProduit;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="type_produit")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $typeProduit;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="detail_produit")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    protected $detailProduit;
 
     /**
      * Get id
@@ -61,5 +72,53 @@ class produit
     public function getNomProduit()
     {
         return $this->nomProduit;
+    }
+
+    /**
+     * Set typeProduit
+     *
+     * @param \App\PlatformBundle\Entity\type_produit $typeProduit
+     *
+     * @return produit
+     */
+    public function setTypeProduit(\App\PlatformBundle\Entity\type_produit $typeProduit)
+    {
+        $this->typeProduit = $typeProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get typeProduit
+     *
+     * @return \App\PlatformBundle\Entity\type_produit
+     */
+    public function getTypeProduit()
+    {
+        return $this->typeProduit;
+    }
+
+    /**
+     * Set detailProduit
+     *
+     * @param \App\PlatformBundle\Entity\detail_produit $detailProduit
+     *
+     * @return produit
+     */
+    public function setDetailProduit(\App\PlatformBundle\Entity\detail_produit $detailProduit)
+    {
+        $this->detailProduit = $detailProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get detailProduit
+     *
+     * @return \App\PlatformBundle\Entity\detail_produit
+     */
+    public function getDetailProduit()
+    {
+        return $this->detailProduit;
     }
 }

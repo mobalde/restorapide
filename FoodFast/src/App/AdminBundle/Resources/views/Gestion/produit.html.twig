@@ -1,7 +1,18 @@
 {% extends "AppAdminBundle::layout.html.twig" %}
 
-{% block title %}Espace Admin FoodFast{% endblock %}
+{% block title %}Espace Admin {{ parent() }}{% endblock %}
 
 {% block app_admin_body %}
-    civilite
+    <div class="tiltle">
+        <h1>Gestion des produits</h1>
+    </div>
+    <div class="col-xs-5 col-md-5 col-lg-5">
+       <ul class="list-group">
+         <li class="list-group-item disabled">Produits</li>
+         <li class="list-group-item">Promos</li>
+       </ul>
+    </div>
+    <div class="col-xs-7 col-md-7 col-lg-7">
+        contents
+    </div>
 {% endblock %}
