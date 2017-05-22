@@ -21,7 +21,7 @@ class ConnexionController extends Controller
         $form   = $this->get('form.factory')->create(userType::class, $utilisateur);
         return $this->render(
                 'AppPlatformBundle:Connexion:connexion.html.twig', array(
-                'form' => $form->createView(),
+                'form' => $form->createView()
                ));
     }
 }

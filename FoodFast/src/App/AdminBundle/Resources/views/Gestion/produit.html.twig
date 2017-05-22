@@ -13,6 +13,10 @@
        </ul>
     </div>
     <div class="col-xs-7 col-md-7 col-lg-7">
-        contents
+      <form method="POST" name="app_platformbundle_user" class="form-horizontal">
+        {{form_widget(form.nomProduit)}}
+        {{form_widget(form.typeProduit)}}
+        {{form_widget(form.detailProduit)}}
+      </form>
     </div>
 {% endblock %}

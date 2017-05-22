@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 class type_produitType extends AbstractType
 {
     /**
@@ -14,7 +16,7 @@ class type_produitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('nomType');
+                ->add('nomType', TextType::class, array('required' => true, 'attr'=>array('placeholder'=>' Libelle Type produit *', 'class'=>'form-control libelle')) );
     }
     
     /**
