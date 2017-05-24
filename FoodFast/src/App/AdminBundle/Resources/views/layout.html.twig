@@ -13,9 +13,10 @@
   {% block app_admin_body %}{% endblock %}
   
   {% block footers %}{% endblock %}
-  
-  {# js specifique aux layouts du bundle #}
-  {% block app_admin_javascripts %}{% endblock %}
-
 {% endblock %}
+
+{# js specifique aux layouts du bundle #}
+  {% block javascripts %}
+     <script src="{{ asset('bundles/appadmin/js/gestion_produit.js') }}"></script>
+  {% endblock %}
 
