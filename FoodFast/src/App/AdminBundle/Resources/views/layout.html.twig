@@ -17,6 +17,9 @@
 
 {# js specifique aux layouts du bundle #}
   {% block javascripts %}
-     <script src="{{ asset('bundles/appadmin/js/gestion_produit.js') }}"></script>
+     {% javascripts '@AppAdminBundle/Resources/public/js/*' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+     {# <script src="{{ asset('bundles/appadmin/js/gestion_produit.js') }}"></script> #}
   {% endblock %}
 

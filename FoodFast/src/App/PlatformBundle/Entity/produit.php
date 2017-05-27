@@ -39,6 +39,12 @@ class produit
      * @ORM\JoinColumn(nullable=false)
      */
     protected $detailProduit;
+    
+    /**
+     * @ORM\ManyToOne(targetEntity="promo")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    protected $promo;
 
     /**
      * Get id
@@ -120,5 +126,29 @@ class produit
     public function getDetailProduit()
     {
         return $this->detailProduit;
+    }
+
+    /**
+     * Set promo
+     *
+     * @param \App\PlatformBundle\Entity\promo $promo
+     *
+     * @return produit
+     */
+    public function setPromo(\App\PlatformBundle\Entity\promo $promo = null)
+    {
+        $this->promo = $promo;
+
+        return $this;
+    }
+
+    /**
+     * Get promo
+     *
+     * @return \App\PlatformBundle\Entity\promo
+     */
+    public function getPromo()
+    {
+        return $this->promo;
     }
 }

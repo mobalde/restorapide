@@ -27,6 +27,31 @@ class promo
      * @ORM\Column(name="description", type="string", length=7000)
      */
     private $description;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prix", type="decimal", scale=2)
+     */
+    private $prix;
+    
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="quantite", type="integer")
+     */
+    private $quantite;
+    
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="actif", type="boolean")
+     */
+    private $actif;
+    
+    public function __construct(){
+        $this->actif = false; 
+    }
 
 
     /**
@@ -61,5 +86,77 @@ class promo
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set prix
+     *
+     * @param string $prix
+     *
+     * @return promo
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return string
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * Set quantite
+     *
+     * @param integer $quantite
+     *
+     * @return promo
+     */
+    public function setQuantite($quantite)
+    {
+        $this->quantite = $quantite;
+
+        return $this;
+    }
+
+    /**
+     * Get quantite
+     *
+     * @return integer
+     */
+    public function getQuantite()
+    {
+        return $this->quantite;
+    }
+
+    /**
+     * Set actif
+     *
+     * @param boolean $actif
+     *
+     * @return promo
+     */
+    public function setActif($actif)
+    {
+        $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * Get actif
+     *
+     * @return boolean
+     */
+    public function getActif()
+    {
+        return $this->actif;
     }
 }
