@@ -43,6 +43,13 @@ class promo
     private $quantite;
     
     /**
+     * @var string
+     * 
+     * @ORM\Column(name="code_promo", type="string")
+     */
+    private $codePromo;
+    
+    /**
      * @var int
      *
      * @ORM\Column(name="actif", type="boolean")
@@ -134,5 +141,29 @@ class promo
     public function getQuantite()
     {
         return $this->quantite;
+    }
+
+    /**
+     * Set actif
+     *
+     * @param boolean $actif
+     *
+     * @return promo
+     */
+    public function setActif($actif)
+    {
+        $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * Get actif
+     *
+     * @return boolean
+     */
+    public function getActif()
+    {
+        return $this->actif;
     }
 }
