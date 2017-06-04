@@ -17,7 +17,7 @@ class produitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('nomProduit', TextType::class, array('required' => true, 'attr'=>array('label'=>'Nom produit','placeholder'=>' Libelle produit *', 'class'=>'form-control libelleproduit')) )
+                ->add('nomProduit', TextType::class, array('required' => true, 'label'=>'Nom produit', 'attr'=>array('placeholder'=>' Libelle produit *', 'class'=>'form-control libelleproduit')) )
                 ->add('typeProduit', type_produitType::class)
                 ->add('detailProduit', detail_produitType::class)
                 ->add('Valider', SubmitType::class, array('attr'=>array('class'=>'btn btn-primary pull-right')));

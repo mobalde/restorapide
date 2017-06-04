@@ -17,9 +17,9 @@ class detail_produitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('ingrdiens', TextType::class, array('required' => true, 'attr'=>array('label'=>'Ingrediens *', 'placeholder'=>' Exemple: creme fraiche...', 'class'=>'form-control ingrediens')))
-                ->add('taille', TextType::class, array('required' => true, 'attr'=>array('label'=>'Taille *', 'placeholder'=>' Exemple: senior...', 'class'=>'form-control taille')))
-                ->add('prix', NumberType::class, array('required' => true, 'attr'=>array('label'=>'Prix *', 'placeholder'=>' Exemple: 8.92', 'class'=>'form-control prix')))
+                ->add('ingrdiens', TextType::class, array('required' => true, 'label'=>'Ingrediens *', 'attr'=>array('placeholder'=>' Exemple: creme fraiche...', 'class'=>'form-control ingrediens')))
+                ->add('taille', TextType::class, array('required' => true, 'label'=>'Taille *', 'attr'=>array('placeholder'=>' Exemple: senior...', 'class'=>'form-control taille')))
+                ->add('prix', NumberType::class, array('required' => true, 'label'=>'Prix *', 'attr'=>array('placeholder'=>' Exemple: 8.92', 'class'=>'form-control prix')))
                 ;
     }
     

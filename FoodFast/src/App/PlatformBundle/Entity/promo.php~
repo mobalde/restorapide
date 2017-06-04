@@ -24,7 +24,7 @@ class promo
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=7000)
+     * @ORM\Column(name="description", type="string", length=7000, nullable=true)
      */
     private $description;
     
@@ -56,8 +56,25 @@ class promo
      */
     private $actif;
     
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="debut", type="datetime")
+     */
+    private $debut;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="validites", type="datetime")
+     */
+    private $validites;
+    
     public function __construct(){
         $this->actif = false; 
+        $this->debut = new \DateTime('now');
+        $this->validites = new \DateTime('now');
+        $this->quantite = 0;
     }
 
 
@@ -165,5 +182,125 @@ class promo
     public function getActif()
     {
         return $this->actif;
+    }
+
+    /**
+     * Set codePromo
+     *
+     * @param string $codePromo
+     *
+     * @return promo
+     */
+    public function setCodePromo($codePromo)
+    {
+        $this->codePromo = $codePromo;
+
+        return $this;
+    }
+
+    /**
+     * Get codePromo
+     *
+     * @return string
+     */
+    public function getCodePromo()
+    {
+        return $this->codePromo;
+    }
+
+    /**
+     * Set dateDebut
+     *
+     * @param \DateTime $dateDebut
+     *
+     * @return promo
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+
+        return $this;
+    }
+
+    /**
+     * Get dateDebut
+     *
+     * @return \DateTime
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * Set dateFin
+     *
+     * @param \DateTime $dateFin
+     *
+     * @return promo
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+    /**
+     * Get dateFin
+     *
+     * @return \DateTime
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
+
+    /**
+     * Set debut
+     *
+     * @param \DateTime $debut
+     *
+     * @return promo
+     */
+    public function setDebut($debut)
+    {
+        $this->debut = $debut;
+
+        return $this;
+    }
+
+    /**
+     * Get debut
+     *
+     * @return \DateTime
+     */
+    public function getDebut()
+    {
+        return $this->debut;
+    }
+
+    /**
+     * Set validite
+     *
+     * @param \DateTime $validite
+     *
+     * @return promo
+     */
+    public function setValidites($validite)
+    {
+        $this->validites = $validite;
+
+        return $this;
+    }
+
+    /**
+     * Get validite
+     *
+     * @return \DateTime
+     */
+    public function getValidites()
+    {
+        return $this->validites;
     }
 }

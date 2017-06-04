@@ -1,18 +1,19 @@
 {% extends "AppAdminBundle::layout.html.twig" %}
 
-{% block title %}Espace Admin {{ parent() }}{% endblock %}
+{% block title %}Espace Admin {{ parent() }} | Produit{% endblock %}
 
 {% block app_admin_body %}
     <div class="tiltle">
         <h1>Gestion des produits</h1>
     </div>
-    <div class="col-xs-3 col-md-3 col-lg-3">
+    <div class="col-lg-offset-1 col-md-offset-1 col-xs-3 col-md-3 col-lg-3">
        <ul class="list-group">
          <li class="list-group-item disabled" id="products">Produits</li>
-         <li class="list-group-item" id="promos">Promos</li>
+         <li class="list-group-item" id="promos"><a href="{{ path('app_admin_gestionpromo') }}">Promos</a></li>
        </ul>
     </div>
     <div class="col-xs-6 col-md-6 col-lg-6">
+      <h2 class="titre_form">Ajout Produit</h2>
       <form method="POST" name="app_adminformbundle_user" class="form-horizontal" action="">
         <div class="form-group">
            {{form_label(form.nomProduit)}}

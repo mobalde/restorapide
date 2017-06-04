@@ -2,6 +2,10 @@ app_admin_gestionproduit:
     path:     /gestion_produit
     defaults: { _controller: AppAdminBundle:Gestion:produit }
 
+app_admin_gestionpromo:
+    path:     /gestion_promo
+    defaults: { _controller: AppAdminBundle:Gestion:promo }    
+
 app_admin_homepage:
     path:     /
     defaults: { _controller: AppAdminBundle:Default:index }

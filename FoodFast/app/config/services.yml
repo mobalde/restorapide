@@ -10,4 +10,4 @@ services:
 
 services:
     app_admin.bibliotheques:
-        class: AdminBundle\Bibliotheques\bibliotheques
+        class: App\AdminBundle\Bibliotheques\bibliotheques
