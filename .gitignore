@@ -2,3 +2,5 @@
 /FoodFast/app/config/parameters*
 /FoodFast/vendor/*
 /FoodFast/var/*
+/FoodFast/web/css/*
+/FoodFast/web/js/*

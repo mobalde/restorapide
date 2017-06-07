@@ -8,6 +8,10 @@
 {% block stylesheets %}
     {{ parent() }}
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    {% stylesheets filter='cssrewrite' 
+        'bundles/appadmin/css/*' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+    {% endstylesheets %}
 {% endblock %}
 
 {% block body %}
@@ -22,7 +26,7 @@
 {% block javascripts %}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-   {% javascripts '@AppAdminBundle/Resources/public/js/*' %}
+   {% javascripts 'bundles/appadmin/js/*' %}
       <script src="{{ asset_url }}"></script>
    {% endjavascripts %}
 {% endblock %}
