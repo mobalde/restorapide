@@ -16,7 +16,7 @@ class type_produitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('nomType', TextType::class, array('required' => true, 'label'=>'Type produit *', 'attr'=>array('placeholder'=>' Exemple: Pizza..', 'class'=>'form-control libelle')) );
+                ->add('nomType', TextType::class, array('required' => true, 'label'=>'Type produit *', 'attr'=>array('placeholder'=>'Exemple: Pizza..', 'class'=>'form-control libelle')) );
     }
     
     /**

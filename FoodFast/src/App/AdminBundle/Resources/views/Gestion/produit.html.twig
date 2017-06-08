@@ -7,10 +7,7 @@
         <h1>Gestion des produits</h1>
     </div>
     <div class="col-lg-offset-1 col-md-offset-1 col-xs-3 col-md-3 col-lg-3">
-       <ul class="list-group">
-         <li class="list-group-item disabled" id="products">Produits</li>
-         <li class="list-group-item" id="promos"><a href="{{ path('app_admin_gestionpromo') }}">Promos</a></li>
-       </ul>
+       {% include  "AppAdminBundle:Gestion:menu.html.twig" %}
     </div>
     <div class="col-xs-6 col-md-6 col-lg-6">
       <h2 class="titre_form">Ajout Produit</h2>
@@ -20,13 +17,24 @@
            {{form_widget(form.nomProduit)}}
         </div>
         <div class="form-group">
-           {{form_widget(form.typeProduit)}}
+           {{form_label(form.Type)}}
+           {{form_widget(form.Type)}}
         </div>
         <div class="form-group">
-           {{form_widget(form.detailProduit)}}
+           {{form_label(form.ingrediens)}}
+           {{form_widget(form.ingrediens)}}
         </div>
         <div class="form-group">
+           {{form_label(form.taille)}}
+           {{form_widget(form.taille)}}
+        </div>
+        <div class="form-group">
+           {{form_label(form.prix)}}
+           {{form_widget(form.prix)}}
+        </div>
+        <div class="form-group bouton-bloc">
            {{ form_widget(form.Valider) }}
+           {{ form_widget(form.Annuler) }}
         </div>
         <div>
            {{ form_rest(form) }}

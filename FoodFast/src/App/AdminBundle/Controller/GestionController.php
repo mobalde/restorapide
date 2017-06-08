@@ -23,7 +23,10 @@ class GestionController extends Controller
                 );
     }
     
-    
+    /**
+     * Ajout promo
+     * @return type
+     */
     public function promoAction(){
         // On récupère le service
         $codePro = $this->container->get('app_admin.bibliotheques');
@@ -32,6 +35,13 @@ class GestionController extends Controller
         return $this->render(
                 'AppAdminBundle:Gestion:promo.html.twig',
                 array('form' => $form->createView())
+                );
+    }
+    
+    
+    public function menuAction(){
+        return $this->render(
+                'AppAdminBundle:Gestion:menu.html.twig'
                 );
     }
 }

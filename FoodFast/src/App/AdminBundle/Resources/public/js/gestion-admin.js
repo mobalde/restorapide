@@ -3,8 +3,13 @@
  * Affiche le bon formulaire par rapport à l'item selectionné dans le menu
  */
 
+document.getElementById("products").addEventListener("click", function( event ) {
+    // Affiche le compte courant de clics à l'intérieur de la div cliquée
+    console.log('--------- je suis tres bien -----------');
+}, false);
+
 $(function(){
-    console.log('------------------');
+    // date 
     $('#datetimepicker').datepicker({
             altField: "#datepicker",
             closeText: 'Fermer',
@@ -20,4 +25,15 @@ $(function(){
             dateFormat: 'yy-mm-dd'
             
     });
+    
+    // Gestion du menu dans la page Admin
+    switch($('.titre_form').text()){
+        case "Ajout Produit":
+            $('#products').addClass('active');
+            $('#products a').css('color', 'white');
+            $('#products a').click(function(event){
+                event.preventDefault();
+            });
+            break;
+    }
 });

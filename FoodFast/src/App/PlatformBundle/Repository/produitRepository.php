@@ -10,4 +10,5 @@ namespace App\PlatformBundle\Repository;
  */
 class produitRepository extends \Doctrine\ORM\EntityRepository
 {
+    
 }

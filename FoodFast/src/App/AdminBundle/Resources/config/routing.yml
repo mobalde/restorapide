@@ -4,7 +4,11 @@ app_admin_gestionproduit:
 
 app_admin_gestionpromo:
     path:     /gestion_promo
-    defaults: { _controller: AppAdminBundle:Gestion:promo }    
+    defaults: { _controller: AppAdminBundle:Gestion:promo }
+
+app_admin_menu:
+    path:     /menu
+    defaults: { _controller: AppAdminBundle:Gestion:menu }
 
 app_admin_homepage:
     path:     /

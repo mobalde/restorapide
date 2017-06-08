@@ -27,18 +27,33 @@ class produit
      * @ORM\Column(name="nom_produit", type="string", length=1000)
      */
     private $nomProduit;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ingrediens", type="string", length=10000)
+     */
+    private $ingrediens;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="taille", type="string", length=10)
+     */
+    private $taille;
+    
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="prix", type="decimal", scale=2)
+     */
+    private $prix;
 
     /**
      * @ORM\ManyToOne(targetEntity="type_produit")
      * @ORM\JoinColumn(nullable=false)
      */
-    protected $typeProduit;
-    
-    /**
-     * @ORM\ManyToOne(targetEntity="detail_produit")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    protected $detailProduit;
+    protected $Type;
     
     /**
      * @ORM\ManyToOne(targetEntity="promo")
@@ -105,26 +120,146 @@ class produit
     }
 
     /**
-     * Set detailProduit
+     * Set promo
      *
-     * @param \App\PlatformBundle\Entity\detail_produit $detailProduit
+     * @param \App\PlatformBundle\Entity\promo $promo
      *
      * @return produit
      */
-    public function setDetailProduit(\App\PlatformBundle\Entity\detail_produit $detailProduit)
+    public function setPromo(\App\PlatformBundle\Entity\promo $promo = null)
     {
-        $this->detailProduit = $detailProduit;
+        $this->promo = $promo;
 
         return $this;
     }
 
     /**
-     * Get detailProduit
+     * Get promo
      *
-     * @return \App\PlatformBundle\Entity\detail_produit
+     * @return \App\PlatformBundle\Entity\promo
      */
-    public function getDetailProduit()
+    public function getPromo()
     {
-        return $this->detailProduit;
+        return $this->promo;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \App\PlatformBundle\Entity\type_produit $type
+     *
+     * @return produit
+     */
+    public function setType(\App\PlatformBundle\Entity\type_produit $type)
+    {
+        $this->Type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \App\PlatformBundle\Entity\type_produit
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+
+    /**
+     * Set ingrdiens
+     *
+     * @param string $ingrdiens
+     *
+     * @return produit
+     */
+    public function setIngrdiens($ingrdiens)
+    {
+        $this->ingrdiens = $ingrdiens;
+
+        return $this;
+    }
+
+    /**
+     * Get ingrdiens
+     *
+     * @return string
+     */
+    public function getIngrdiens()
+    {
+        return $this->ingrdiens;
+    }
+
+    /**
+     * Set taille
+     *
+     * @param string $taille
+     *
+     * @return produit
+     */
+    public function setTaille($taille)
+    {
+        $this->taille = $taille;
+
+        return $this;
+    }
+
+    /**
+     * Get taille
+     *
+     * @return string
+     */
+    public function getTaille()
+    {
+        return $this->taille;
+    }
+
+    /**
+     * Set prix
+     *
+     * @param string $prix
+     *
+     * @return produit
+     */
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get prix
+     *
+     * @return string
+     */
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * Set ingrediens
+     *
+     * @param string $ingrediens
+     *
+     * @return produit
+     */
+    public function setIngrediens($ingrediens)
+    {
+        $this->ingrediens = $ingrediens;
+
+        return $this;
+    }
+
+    /**
+     * Get ingrediens
+     *
+     * @return string
+     */
+    public function getIngrediens()
+    {
+        return $this->ingrediens;
     }
 }
