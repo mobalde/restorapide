@@ -23,7 +23,7 @@ class promoType extends AbstractType
                 ->add('description', TextType::class, array('label'=>' Description', 'attr'=>array('class'=>'form-control description')))
                 ->add('prix', NumberType::class, array('required' => true, 'label'=>' Prix *', 'attr'=>array('class'=>'form-control prix')))
                 ->add('quantite', NumberType::class, array('attr'=>array('class'=>'form-control quantite'), 'label'=>' Quantite *'))
-                ->add('Valider', SubmitType::class, array('attr'=>array('class'=>'btn btn-primary pull-right')))
+                ->add('Valider', SubmitType::class, array('attr'=>array('class'=>'btn btn-primary pull-right bouton-valider')))
                 ->add('Annuler', ResetType::class, array('attr'=>array('class'=>'btn btn-warning pull-right')));
     }
     

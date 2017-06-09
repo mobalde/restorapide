@@ -29,9 +29,16 @@ $(function(){
     // Gestion du menu dans la page Admin
     switch($('.titre_form').text()){
         case "Ajout Produit":
-            $('#products').addClass('active');
+            $('#products').css('background-color', '#5cb85c');
             $('#products a').css('color', 'white');
             $('#products a').click(function(event){
+                event.preventDefault();
+            });
+            break;
+        case "Ajout Promo":
+            $('#promos').css('background-color', '#5cb85c');
+            $('#promos a').css('color', 'white');
+            $('#promos a').click(function(event){
                 event.preventDefault();
             });
             break;
