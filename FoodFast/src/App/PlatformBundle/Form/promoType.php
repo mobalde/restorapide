@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,6 +21,13 @@ class promoType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+                ->add('Type', EntityType::class, array(
+                        'class'        => 'AppPlatformBundle:type_produit',
+                        'choice_label' => 'nomType',
+                        'multiple'     => false,
+                        'label'        => 'Type *',
+                        'attr'=>array('class'=>'form-control libelleproduit')
+                      ))
                 ->add('description', TextType::class, array('label'=>' Description', 'attr'=>array('class'=>'form-control description')))
                 ->add('prix', NumberType::class, array('required' => true, 'label'=>' Prix *', 'attr'=>array('class'=>'form-control prix')))
                 ->add('quantite', NumberType::class, array('attr'=>array('class'=>'form-control quantite'), 'label'=>' Quantite *'))

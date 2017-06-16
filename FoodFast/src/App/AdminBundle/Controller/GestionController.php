@@ -20,12 +20,13 @@ class GestionController extends Controller
         $produit = new produit();
         $form   = $this->get('form.factory')->create(produitType::class, $produit);
         // Verification du formulaire
-        if ($form->handleRequest($request)->isValid()){
-            echo '<pre>';
-             var_dump($request);
-            exit;
+        if ($request->isMethod('POST')){
+             if ($form->handleRequest($request)->isValid()){
+                 $em = $this->getDoctrine()->getManager(); // Doctrine manager
+                 $em->persist($produit);
+                 $em->flush();
+             }
         }
-        
         return $this->render(
                 'AppAdminBundle:Gestion:produit.html.twig',
                 array('form' => $form->createView())

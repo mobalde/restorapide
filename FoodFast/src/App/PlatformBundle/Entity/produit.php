@@ -54,12 +54,6 @@ class produit
      * @ORM\JoinColumn(nullable=false)
      */
     protected $Type;
-    
-    /**
-     * @ORM\ManyToOne(targetEntity="promo")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    protected $promo;
 
     /**
      * Get id
@@ -120,30 +114,6 @@ class produit
     }
 
     /**
-     * Set promo
-     *
-     * @param \App\PlatformBundle\Entity\promo $promo
-     *
-     * @return produit
-     */
-    public function setPromo(\App\PlatformBundle\Entity\promo $promo = null)
-    {
-        $this->promo = $promo;
-
-        return $this;
-    }
-
-    /**
-     * Get promo
-     *
-     * @return \App\PlatformBundle\Entity\promo
-     */
-    public function getPromo()
-    {
-        return $this->promo;
-    }
-
-    /**
      * Set type
      *
      * @param \App\PlatformBundle\Entity\type_produit $type
@@ -165,30 +135,6 @@ class produit
     public function getType()
     {
         return $this->Type;
-    }
-
-    /**
-     * Set taille
-     *
-     * @param string $taille
-     *
-     * @return produit
-     */
-    public function setTaille($taille)
-    {
-        $this->taille = $taille;
-
-        return $this;
-    }
-
-    /**
-     * Get taille
-     *
-     * @return string
-     */
-    public function getTaille()
-    {
-        return $this->taille;
     }
 
     /**
@@ -237,5 +183,29 @@ class produit
     public function getIngrediens()
     {
         return $this->ingrediens;
+    }
+
+    /**
+     * Set taille
+     *
+     * @param string $taille
+     *
+     * @return produit
+     */
+    public function setTaille($taille)
+    {
+        $this->taille = $taille;
+
+        return $this;
+    }
+
+    /**
+     * Get taille
+     *
+     * @return string
+     */
+    public function getTaille()
+    {
+        return $this->taille;
     }
 }

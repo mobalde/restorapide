@@ -27,6 +27,12 @@ class type_produit
      * @ORM\Column(name="nom_type", type="string", length=1000)
      */
     private $nomType;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="App\PlatformBundle\Entity\promo", mappedBy="type_produit")
+     * 
+     */
+    private $promo;
 
 
     /**
@@ -62,5 +68,45 @@ class type_produit
     {
         return $this->nomType;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->promo = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add promo
+     *
+     * @param \App\PlatformBundle\Entity\promo $promo
+     *
+     * @return type_produit
+     */
+    public function addPromo(\App\PlatformBundle\Entity\promo $promo)
+    {
+        $this->promo[] = $promo;
+
+        return $this;
+    }
+
+    /**
+     * Remove promo
+     *
+     * @param \App\PlatformBundle\Entity\promo $promo
+     */
+    public function removePromo(\App\PlatformBundle\Entity\promo $promo)
+    {
+        $this->promo->removeElement($promo);
+    }
+
+    /**
+     * Get promo
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPromo()
+    {
+        return $this->promo;
+    }
+}

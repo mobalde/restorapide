@@ -70,6 +70,13 @@ class promo
      */
     private $validites;
     
+    /**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="type_produit", inversedBy="promo")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $type;
+    
     public function __construct(){
         $this->actif = false; 
         $this->debut = new \DateTime('now');
@@ -302,5 +309,29 @@ class promo
     public function getValidites()
     {
         return $this->validites;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \App\PlatformBundle\Entity\type_produit $type
+     *
+     * @return promo
+     */
+    public function setType(\App\PlatformBundle\Entity\type_produit $type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \App\PlatformBundle\Entity\type_produit
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }
