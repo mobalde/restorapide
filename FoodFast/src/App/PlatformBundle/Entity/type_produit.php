@@ -29,13 +29,20 @@ class type_produit
     private $nomType;
     
     /**
-     * @ORM\OneToMany(targetEntity="App\PlatformBundle\Entity\promo", mappedBy="type_produit")
+     * @ORM\OneToMany(targetEntity="promo", mappedBy="type")
      * 
      */
     private $promo;
-
-
+    
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->promo = new ArrayCollection();
+    }
+
+        /**
      * Get id
      *
      * @return int
@@ -68,13 +75,7 @@ class type_produit
     {
         return $this->nomType;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->promo = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    
 
     /**
      * Add promo

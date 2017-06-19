@@ -3,9 +3,15 @@
  * Affiche le bon formulaire par rapport à l'item selectionné dans le menu
  */
 
-document.getElementById("products").addEventListener("click", function( event ) {
+document.getElementById('new-bl-heightPrice').addEventListener('click', function( event ) {
     // Affiche le compte courant de clics à l'intérieur de la div cliquée
-    console.log('--------- je suis tres bien -----------');
+    var nbelement = document.querySelectorAll('new-bl-heightPrice div'); // le nombre de bloc
+    if(nbelement.length<=2){
+        document.getElementById('new-bl-heightPrice').innerHTML += '<input type="text" >';
+    }
+    else{
+        // On desactive le bouton 
+    }
 }, false);
 
 $(function(){
