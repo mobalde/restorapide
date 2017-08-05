@@ -14,7 +14,10 @@ class bibliotheques {
      * 
      * @return string
      */
-    function generate_code_promo(){
+    
+    public function __construct(){}
+    
+    public function generate_code_promo(){
        $characts = 'abcdefghijklmnopqrstuvwxyz'; 
        $characts .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';	
        $characts .= '1234567890'; 

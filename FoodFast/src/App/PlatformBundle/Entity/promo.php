@@ -81,7 +81,7 @@ class promo
         $this->actif = false; 
         $this->debut = new \DateTime('now');
         $this->validites = new \DateTime('now');
-        $this->quantite = 0;
+        $this->quantite = 1;
     }
 
 
