@@ -34,7 +34,7 @@ class LoadTypeData implements FixtureInterface{
         }
         
         // Table produit (type_id, nom_produit, ingrediens, taille, prix)
-        $produit = array(
+        /*$produit = array(
             array(2, 'Tex mex nuggetsx10', '', '', 7.5),
             array(2, 'Tex mex wingsx10', "Jaune d''oeuf, lardons, Crème fraîche", '', 7.5),
             array(2, 'Tex mex bouchees chevres', 'Crème fraîche, chèvre, parmesan, brie, bleu', '', 7.5),
@@ -267,7 +267,7 @@ class LoadTypeData implements FixtureInterface{
             (257, 'Pizzas', 'moussaka', 'mega', 'NC', 29.9),
             (258, 'Pizzas', 'chicken', 'mega', 'NC', 29.9),
             (259, 'Pizzas', 'indienne', 'mega', 'NC', 29.9)
-        );
+        );*/
         
         $manager->flush();
     }
