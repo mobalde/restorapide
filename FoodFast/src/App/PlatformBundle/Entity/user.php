@@ -2,6 +2,8 @@
 
 namespace App\PlatformBundle\Entity;
 
+
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="App\PlatformBundle\Repository\userRepository")
  */
-class user
+class user extends BaseUser
 {
     /**
      * @var int
@@ -19,7 +21,7 @@ class user
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -34,20 +36,6 @@ class user
      * @ORM\Column(name="prenom", type="string", length=1000)
      */
     private $prenom;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=1000)
-     */
-    private $email;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="passwrd", type="text")
-     */
-    private $passwrd;
     
     /**
      * @var string
@@ -69,14 +57,6 @@ class user
      * @ORM\Column(name="telephone", type="string", length=10)
      */
     private $telephone;
-    
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="type_user", type="string", length=8)
-     */
-    private $typeUser;
-
 
     /**
      * Get id
